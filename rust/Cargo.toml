@@ -1,0 +1,19 @@
+[package]
+name = "rust_lib_bupt_ice"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+flutter_rust_bridge = "=2.13.0"
+bupt-api = { path = "D:/Develop/Workspace/Others/bupt-api/rust" }
+tokio = { version = "1.38", features = ["sync", "time", "macros", "rt"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+[lints.rust]
+
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(frb_expand)'] }
